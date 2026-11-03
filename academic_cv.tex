@@ -1,0 +1,160 @@
+% Academic CV -- Quinn Reynolds
+% Compile with: pdflatex Academic_CV.tex
+%
+% Anything in red (\todo{...}) is a placeholder to fill in.
+% Once everything is filled in, delete the red colour by changing the
+% \todo definition to:  \newcommand{\todo}[1]{#1}
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}            % Times-style serif
+\usepackage[margin=0.75in,top=0.6in,bottom=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{needspace}
+
+\definecolor{linkblue}{RGB}{17,85,204}
+\hypersetup{colorlinks=true,urlcolor=linkblue}
+
+\newcommand{\todo}[1]{\textcolor{red}{[#1]}}
+\newcommand{\me}{\textbf{Q.~Reynolds}}   % your name, bolded in author lists
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Section headings: rule above, large underlined title
+\newcommand{\cvsectionstyle}[1]{\underline{#1}}
+\titleformat{\section}[block]{\Large}{}{0pt}{\cvsectionstyle}[\vspace{-2pt}]
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+\let\oldsection\section
+\renewcommand{\section}[1]{\par\needspace{6\baselineskip}\vspace{4pt}\noindent\rule{\textwidth}{0.4pt}\par\oldsection*{#1}}
+
+% Sub-headings inside a section (e.g. "Under Review")
+\newcommand{\subhead}[1]{\par\vspace{3pt}\textit{#1}\par\vspace{1pt}}
+
+\setlist[itemize]{label=\textbullet, leftmargin=1.5em, itemsep=1pt, topsep=1pt, parsep=0pt}
+
+% \entry{Role, Organization}{Dates}
+\newcommand{\entry}[2]{\textbf{#1} \hfill #2\par}
+% \supervisor{Name, Department}
+\newcommand{\supervisor}[1]{\textit{Supervisor: #1}\par}
+
+% Numbered publication list
+\newlist{pubs}{enumerate}{1}
+\setlist[pubs]{label={[\arabic*]}, leftmargin=2.2em, itemsep=3pt, topsep=2pt}
+
+\begin{document}
+
+%==================== Header ====================
+\begin{center}
+  {\LARGE Quinn Reynolds}\\[3pt]
+  \href{mailto:quinn.reynolds@mail.utoronto.ca}{quinn.reynolds@mail.utoronto.ca} $|$
+  (604)-230-0004 $|$ Toronto ON $|$
+  \href{https://www.linkedin.com/in/qreynolds/}{linkedin.com/in/qreynolds}
+\end{center}
+
+%==================== Education ====================
+\section{Education}
+\entry{Honours Bachelor of Science, University of Toronto}{Expected June 2027}
+Computer Science Major, Mathematics Minor, Statistics Minor \hfill cGPA: 3.63/4.0 \quad Last two years: 3.80/4.0
+\begin{itemize}
+  \item \textbf{Relevant Coursework:} Neural Networks and Deep Learning, Intro to Machine Learning, Methods of Data Analysis, Multivariate Data Analysis, ML Engineering Capstone (in progress)
+\end{itemize}
+
+%==================== Research Interests ====================
+\section{Research Interests}
+Machine learning for climate and environmental science; large language models for environmental data science; climate model downscaling with foundation models;
+multilingual safety and interpretability of large language models.
+
+%==================== Publications ====================
+\section{Publications}
+
+\subhead{Under Review}
+\begin{pubs}
+  \item \me, D.~Shore, V.~Leos Barajas, T.~Yoreh, M.~Franklin.
+        Quantifying organizational environmental action from web data and large language models.
+        Under review at \textit{Environmental Data Science}, 2026.
+        \href{https://arxiv.org/abs/2609.16627}{arXiv:2609.16627}.
+\end{pubs}
+
+\subhead{Manuscripts in Preparation}
+\begin{pubs}[resume]
+  \item \me, M.~Franklin.
+        Robust downscaling of climate model projections with pretrained climate foundation models.
+        \textit{In preparation.}
+  \item \me$^{*}$, U.~Umut$^{*}$, X.~L.~Lin$^{*}$, C.~Wan$^{*}$, D.~Linkov.
+        A multilingual safety-refusal benchmark for frontier language models and latent harmfulness signals in open-weight models.
+        \textit{In preparation.}
+\end{pubs}
+{\small $^{*}$Equal contribution.}
+
+%==================== Research Experience ====================
+\section{Research Experience}
+
+\entry{Research Assistant, School of the Environment, University of Toronto}{September 2026 -- Present}
+\supervisor{Dr.~Tanhum Yoreh}
+\begin{itemize}
+  \item Continuing my USRA project by expanding the LLM framework for measuring environmental action in [1] beyond U.S.\ Jewish congregations to additional countries and religious traditions
+\end{itemize}
+
+\entry{Undergraduate Researcher, Department of Statistical Sciences, University of Toronto}{May 2026 -- Present}
+\supervisor{Dr.~Meredith Franklin}
+\begin{itemize}
+  \item Funded by an NSERC USRA (Summer 2026); first author of [1]
+  \item Built a national database of 4,964 congregations and a 154,454-page web corpus, and compared keyword, semantic-retrieval and direct LLM classification against expert review
+  \item Developing a robust approach to downscaling climate model predictions using large pretrained climate foundation models
+\end{itemize}
+
+\entry{Research Collaborator, Multilingual LLM Safety}{September 2026 -- Present}
+\supervisor{Denys Linkov}
+\begin{itemize}
+  \item Building a robust multilingual safety-refusal testing benchmark for frontier language models
+  \item Using the benchmark to extract a latent multilingual harmfulness signal from open-source models
+\end{itemize}
+
+%==================== Awards ====================
+\section{Awards \& Honours}
+\entry{NSERC Undergraduate Student Research Award (USRA)}{2026}
+\entry{Dean's List Scholar, Faculty of Arts \& Science, University of Toronto}{2025, 2026}
+\entry{Silver T-Leaf Award, Varsity Blues Athletics, University of Toronto}{Awarded for 2024--25}
+\hspace{1.5em}\textit{Academic award for varsity athletes with a GPA of 3.5 or higher}\par
+
+%==================== Teaching ====================
+\section{Teaching Experience}
+\entry{Teaching Assistant, Calculus II, University of Toronto}{August 2025 -- March 2026}
+\begin{itemize}
+  \item Led tutorials for groups of 10 to 30 students
+  \item Fostered a collaborative learning community where all students were able to realize their potential
+\end{itemize}
+
+%==================== Industry ====================
+\section{Industry Experience}
+
+\entry{Founding Engineer, Aspirare Semi}{November 2024 -- Present}
+\begin{itemize}
+  \item Develop software to convert existing machine learning algorithms to run on Aspirare's custom silicon
+  \item Lead low-level speed-testing software for assessing the viability of the Aspirare technology
+\end{itemize}
+
+\entry{Data Science Intern, Canadian Medical Protective Association}{May 2024 -- August 2024}
+\begin{itemize}
+  \item Built tools and proof-of-concept pipelines for fine-tuning large language models on proprietary anonymized medical data, using PyTorch, Hugging Face, Ollama and LangChain
+  \item Supported user testing of internally hosted LLMs
+  \item Prepared AI technical reports and internal training material for senior leadership and stakeholders
+\end{itemize}
+
+%==================== Skills ====================
+\section{Technical Skills}
+\textbf{Languages:} Python, Java, C, C++ \\
+\textbf{ML \& LLMs:} PyTorch, TensorFlow, Hugging Face, vLLM, LangChain, Ollama, Weights \& Biases \\
+\textbf{Data:} pandas, GeoPandas \\
+\textbf{Compute \& Tools:} Digital Research Alliance of Canada clusters, Modal, Git
+
+%==================== Leadership ====================
+\section{Leadership \& Activities}
+\entry{Varsity Rugby Athlete, University of Toronto}{September 2023 -- March 2026}
+
+\end{document}
